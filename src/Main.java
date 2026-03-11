@@ -27,19 +27,35 @@ public class Main {
                     System.out.println("Direccion: ");
                     String direccion= teclado.nextLine();
                     System.out.println("Desea agregarlo a favoritos?");
+                    break;
 
                 case 2:
                     System.out.println("Ingrese el nombre del contacto que desea buscar: ");
                     String nombreContacto= teclado.nextLine();
                     agenda.buscarContacto(nombreContacto);
+                    break;
 
                 case 3:
                     System.out.println("Ingrese el contacto que desea eliminar: ");
                     String eliminar= teclado.nextLine();
+                    break;
 
                 case 4:
-                    System.out.println();
+                    System.out.println("Contactos");
+                    if(contactos.isEmpty()){
+                        System.out.println("No tienes contactos agregados");
+                    } else {
+                        for (int i = 0; i < contactos.size(); i++){
+                            System.out.println(i + 1) + ". " + contactos.get(i));
             }
         }
+                    break;
+                case 5:
+                    salir = true;
+                    break;
+                default:
+                    system.out.println("opcion no válida");
     }
+            while (!salir);
+        }
 }
